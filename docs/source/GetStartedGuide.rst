@@ -32,15 +32,29 @@ package names is::
 
     $ dnf install xz tcpdump iproute iputils gcc glibc-headers nc git python-netaddr python-devel
 
+On centos8::
+
+    $ dnf install xz tcpdump iproute iputils gcc glibc-headers netcat git python3-netaddr python39-devel libvirt-client attr qemu-kvm
+
 Then you can get Avocado-VT via pip::
 
     $ pip install git+https://github.com/avocado-framework/avocado-vt
+
+On centos8, use pip3 instead of pip::
+
+    $ pip3 install git+https://github.com/avocado-framework/avocado-vt
 
 Or by manually cloning it from github::
 
     $ git clone https://github.com/avocado-framework/avocado-vt
     $ cd avocado-vt
     $ pip install .
+
+On centos8, use pip3 instead of pip::
+
+    $ git clone https://github.com/avocado-framework/avocado-vt
+    $ cd avocado-vt
+    $ pip3 install .
 
 It's recommended to use ``pip`` even for local install as it treats
 requirements differently and the use of ``python setup.py install``
@@ -67,6 +81,10 @@ Details about this can be found `here <https://avocado-framework.readthedocs.io/
 
 Bootstrapping Avocado-VT
 ========================
+
+On centos8, install openvswitch first::
+
+    $ dnf install epel-release -y && dnf install centos-release-openstack-train -y && dnf install openvswitch -y
 
 After the package, a bootstrap process must be run. Choose your test backend
 (qemu, libvirt, v2v, openvswitch, etc) and run the `vt-bootstrap` command. Example::
