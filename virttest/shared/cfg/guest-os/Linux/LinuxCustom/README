@@ -4,6 +4,11 @@ As an example, you could create a file called foo.cfg with the contents:
 FooLinux:
     image_name = images/foo-linux
 
+And, a bootstrap process must be run. Choose your test backend
+(qemu, libvirt, v2v, openvswitch, etc) and run the `vt-bootstrap` command. Example::
+
+    $ avocado vt-bootstrap --vt-type qemu
+
 Which would make it possible to specify this custom guest using
 
 $ avocado run migrate..tcp --vt-type qemu --vt-guest-os LinuxCustom.FooLinux

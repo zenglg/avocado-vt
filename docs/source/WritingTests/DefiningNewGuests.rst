@@ -24,6 +24,11 @@ You can add, say, foo.cfg to that dir with the content:
     - FooLinux:
         image_name = images/foo-linux
 
+And, a bootstrap process must be run. Choose your test backend
+(qemu, libvirt, v2v, openvswitch, etc) and run the `vt-bootstrap` command. Example::
+
+    $ avocado vt-bootstrap --vt-type qemu
+
 Which would make it possible to specify this custom guest using
 
 ::
@@ -81,6 +86,11 @@ You can add, say, foo.cfg to that dir with the content:
 
     - FooWindows:
         image_name = images/foo-windows
+
+And, a bootstrap process must be run. Choose your test backend
+(qemu, libvirt, v2v, openvswitch, etc) and run the `vt-bootstrap` command. Example::
+
+    $ avocado vt-bootstrap --vt-type qemu
 
 Which would make it possible to specify this custom guest using
 
